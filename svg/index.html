@@ -4,8 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>SVG map</title>
-		<script src="bower_components/d3/d3.min.js"></script>
-		<script src="bower_components/topojson/topojson.js"></script>
+		<script src="../bower_components/d3/d3.min.js"></script>
+		<script src="../bower_components/topojson/topojson.min.js"></script>
 		<script src="js/datamaps.mmr.js"></script>
 		<link rel="stylesheet" href="../common/css/bootstrap.min.css">
 		<style>
@@ -23,13 +23,23 @@
 			#map path {
 				stroke: #313B47 !important;
 			}
-			#map path:hover {
-				cursor: pointer;
-			}
 			#map .bubbles circle {
 				cursor: pointer;
 				stroke: #00F4D8 !important;
 				fill: #00F4D8 !important;
+			}
+			.datamaps-subunit {
+				fill: rgb(34, 34, 44) !important;
+			}
+			.datamaps-subunit:hover {
+				fill: #FF3E57 !important;
+				cursor: pointer;
+			}
+			.datamaps-subunit.MM\.MD {
+				fill: #ffdd00 !important;
+			}
+			.datamaps-subunit.MM\.YA {
+				fill: #8142FD !important;
 			}
 		</style>
 	</head>
@@ -42,6 +52,7 @@
 			</div>
 		</nav>
 		<div class="container">
+			<h1>D3 Basic</h1>
 			<div id="map"></div>
 		</div>
 		<script>
@@ -75,20 +86,7 @@
 				done: done,
 				responsive: true,
 				fills: {
-					mandalay: '#ffdd00',
-					yangon: '#8142FD',
-					defaultFill: 'rgb(34, 34, 44)'
-				},
-				data: {
-					'MM.MD': {
-						fillKey: 'mandalay',
-					},
-					'MM.YA' : {
-						fillKey: 'yangon'
-					}
-				},
-				geographyConfig: {
-					highlightFillColor: '#FF3E57',
+					// defaultFill: 'rgb(34, 34, 44)'
 				},
 				element: document.getElementById('map'),
 				scope: 'mmr',

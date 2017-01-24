@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "topojson": "~1.6.20",
+    "d3": "~3.5.17"
   }
 }
