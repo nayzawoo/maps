@@ -1,0 +1,56 @@
+@font-face {
+	font-family: 'Ours-Unicode';
+	src: url('../../fonts/Ours-Unicode/Ours-Unicode.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/Ours-Unicode/Ours-Unicode.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('../../fonts/Ours-Unicode/Ours-Unicode.woff2') format('woff2'), /* Super Modern Browsers */
+	url('../../fonts/Ours-Unicode/Ours-Unicode.woff') format('woff'), /* Pretty Modern Browsers */
+	url('../../fonts/Ours-Unicode/Ours-Unicode.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('../../fonts/Ours-Unicode/Ours-Unicode.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+	padding-top: 80px;
+	padding-bottom: 20px;
+	background-color: #313B47;
+}
+
+.navbar-default {
+	background-color: #313B47;
+}
+
+#main-title {
+	font-family: 'Ours-Unicode';
+	font-size: 24px;
+	color: #e9e9eb;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+#map {
+	background-color: #313B47;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0 auto;
+	float: left;
+}
+#map path {
+	stroke: #313B47 !important;
+}
+#map .bubbles circle {
+	cursor: pointer;
+	stroke: #00F4D8 !important;
+	fill: #00F4D8 !important;
+}
+.datamaps-subunit {
+	fill: rgb(34, 34, 44) !important;
+}
+.datamaps-subunit:hover {
+	fill: #FF3E57 !important;
+	cursor: pointer;
+}
+.datamaps-subunit.MM\.MD {
+	fill: #ffdd00 !important;
+}
+.datamaps-subunit.MM\.YA {
+	fill: #8142FD !important;
+}

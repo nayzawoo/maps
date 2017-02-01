@@ -3,45 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>SVG map</title>
+		<title>SVG map 🗺</title>
 		<script src="../bower_components/d3/d3.min.js"></script>
 		<script src="../bower_components/topojson/topojson.min.js"></script>
 		<script src="js/datamaps.mmr.js"></script>
 		<link rel="stylesheet" href="../common/css/bootstrap.min.css">
-		<style>
-			body {
-				padding-top: 80px;
-				padding-bottom: 20px;
-				background-color: #292B24;
-			}
-			#map {
-				background-color: #313B47;
-				width: 100%;
-				height: 100vh;
-				margin: 0 auto;
-			}
-			#map path {
-				stroke: #313B47 !important;
-			}
-			#map .bubbles circle {
-				cursor: pointer;
-				stroke: #00F4D8 !important;
-				fill: #00F4D8 !important;
-			}
-			.datamaps-subunit {
-				fill: rgb(34, 34, 44) !important;
-			}
-			.datamaps-subunit:hover {
-				fill: #FF3E57 !important;
-				cursor: pointer;
-			}
-			.datamaps-subunit.MM\.MD {
-				fill: #ffdd00 !important;
-			}
-			.datamaps-subunit.MM\.YA {
-				fill: #8142FD !important;
-			}
-		</style>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -52,70 +19,9 @@
 			</div>
 		</nav>
 		<div class="container">
-			<h1>D3 SVG Map</h1>
+			<h1 id="main-title">ပြည်ထောင်စုသမ္မတ မြန်မာနိုင်ငံတော်</h1>
 			<div id="map"></div>
 		</div>
-		<script>
-			var labels = {
-				labelColor: '#fff',
-				fontSize: 20,
-				customLabelText: {
-					'MM.SA': "Sagaing",
-					'MM.MD': "Mandalay",
-					'MM.YA': "Rangoon",
-				}
-			}
-
-			var bubbles = [{
-				name: 'Monywa',
-				radius: 10,
-				fillKey: 'MM.SA',
-				latitude: 22.1065893,
-				longitude: 95.0789498,
-				fillOpacity: 0.3
-			}]
-
-			// Events
-			var done = function(datamap) {
-	            datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-	                alert(geography.properties.name)
-	            })
-	        }
-
-			var map = new Datamap({
-				done: done,
-				responsive: true,
-				fills: {
-					// defaultFill: 'rgb(34, 34, 44)'
-				},
-				element: document.getElementById('map'),
-				scope: 'mmr',
-				setProjection: function(element) {
-					var projection = d3.geo.equirectangular()
-						.center([97, 19])
-						.scale(1800)
-						.translate([element.offsetWidth / 2, element.offsetHeight / 2])
-					var path = d3.geo.path().projection(projection);
-
-					return {
-						path: path, projection: projection
-					}
-				},
-			})
-
-			map.labels(labels)
-
-			map.bubbles(bubbles, {
-				popupTemplate: function (geo, data) {
-					return '<div class="hoverinfo">' +  data.name + '</div>'
-				}
-			})
-
-			// Responsive
-			// Pure JavaScript
-		    window.addEventListener('resize', function() {
-		        map.resize()
-		    })
-		</script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
