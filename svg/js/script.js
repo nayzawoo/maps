@@ -18,6 +18,12 @@ var bubbles = [{
 	fillOpacity: 0.3
 }]
 
+var onClickRegion = function(geography) {
+	Toastify({
+  		text: `${geography.properties.name}`
+	})
+}
+
 // Events
 var done = function(datamap) {
 	datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
