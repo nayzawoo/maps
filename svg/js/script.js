@@ -26,9 +26,7 @@ var onClickRegion = function(geography) {
 
 // Events
 var done = function(datamap) {
-	datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-		alert(geography.properties.name)
-	})
+	datamap.svg.selectAll('.datamaps-subunit').on('click', onClickRegion)
 }
 
 var map = new Datamap({
