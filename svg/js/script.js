@@ -22,6 +22,7 @@ var onClickRegion = function(geography) {
 	Toastify({
   		text: `${geography.properties.name}`
 	})
+	.showToast()
 }
 
 // Events
